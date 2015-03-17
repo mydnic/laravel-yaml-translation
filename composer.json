@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Devitek\\": "src/Devitek"
+      "jackjoe\\": "src/JackJoe"
     }
   },
   "minimum-stability": "dev"
