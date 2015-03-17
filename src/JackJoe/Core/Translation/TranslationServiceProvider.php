@@ -15,7 +15,7 @@ class TranslationServiceProvider extends IlluminateTranslationServiceProvider
   {
     $this->app->bindShared('translation.loader', function($app)
     {
-      return new YamlFileLoader($app['files'], $app['path'].'/lang');
+      return new YamlFileLoader($app['files'], $app['path.lang']);
     });
   }
 
