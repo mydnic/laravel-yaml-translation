@@ -43,9 +43,7 @@ return [
 ];
 ```
 
-Will be equivalent to:
-
-**YAML**
+Will in **YAML** be equivalent to:
 
 ```yaml
 hello: Hello :name
@@ -65,5 +63,9 @@ team:
   - name: Bar
     age: 20
 ```
+
+## Important!
+
+When you want to use the `yaml` files, be sure to **delete** the `php` files!
 
 With love, by [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml)
