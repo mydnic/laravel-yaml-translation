@@ -1,25 +1,25 @@
 {
-    "name": "jackjoe/yaml-translation",
-    "description": "Add YAML file support to Laravel TranslationServiceProvider, fork of devitek/yaml-translation",
-    "authors": [
-        {
-            "name": "Jack + Joe",
-            "email": "hello@jackjoe.be"
-        },
-        {
-            "name": "Thomas SIEFFERT",
-            "email": "caporaldead@devitek.fr"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/translation": "4.x",
-        "symfony/yaml": "2.*"
+  "name": "jackjoe/yaml-translation",
+  "description": "Add YAML file support to Laravel TranslationServiceProvider, fork of devitek/yaml-translation",
+  "authors": [
+    {
+      "name": "Jack + Joe",
+      "email": "hello@jackjoe.be"
     },
-    "autoload": {
-        "psr-4": {
-            "Devitek\\": "src/Devitek"
-        }
-    },
-    "minimum-stability": "dev"
+    {
+      "name": "Thomas SIEFFERT",
+      "email": "caporaldead@devitek.fr"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/translation": "5.0.*",
+    "symfony/yaml": "2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Devitek\\": "src/Devitek"
+    }
+  },
+  "minimum-stability": "dev"
 }
