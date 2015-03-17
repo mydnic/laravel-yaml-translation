@@ -1,14 +1,20 @@
-# Add Yaml file support for Laravel 4 TranslationServiceProvider
+# Add Yaml file support for Laravel 5 TranslationServiceProvider
 
-This package uses Symfony/Yaml parser.
+This package uses Symfony/Yaml parser, and is forked from [Devitek/laravel-yaml-translation](https://github.com/Devitek/laravel-yaml-translation)
 
-## Installing
+## Installation
 
-Add ```"devitek/yaml-translation": "*"``` to your **composer.json** by running :
+### Composer
 
-    php composer.phar require devitek/yaml-translation
+Add Laravel Localization to your `composer.json` file.
 
-And select version : ```0.*```
+    "jackjoe/yaml-translation": "*"
+
+Run `composer install` to get the latest version of the package.
+
+### Manually
+
+It's recommended that you use Composer, however you can download and install from this repository.
 
 ## Add support in Laravel
 
@@ -18,9 +24,9 @@ You have to replace
 
 with
 
-`'Devitek\Core\Translation\TranslationServiceProvider',`
+`'JackJoe\Core\Translation\TranslationServiceProvider',`
 
-in **app/config/app.php**.
+in `config/app.php`.
 
 ## How to use
 
@@ -43,7 +49,7 @@ Will be equivalent to :
 
 ```yaml
 hello: Hello :name
-author: Devitek
+author: Jack + Joe
 ```
 
-Enjoy it ! Feel free to fork :) !
+With love, by [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml)
