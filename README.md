@@ -30,9 +30,9 @@ in `config/app.php`.
 
 ## How to use
 
-Just use regular **php** files or use **yml** or **yaml** files instead.
+Instead of using the regular **php** files to input your translation, use **yml** or **yaml** files instead.
 
-**PHP** :
+**PHP**:
 
 ```php
 <?php
@@ -43,13 +43,27 @@ return [
 ];
 ```
 
-Will be equivalent to :
+Will be equivalent to:
 
 **YAML**
 
 ```yaml
 hello: Hello :name
 author: Jack + Joe
+```
+
+A more complex example:
+
+```yaml
+title: My Website
+copyright: |
+  2015 &copy;
+
+team:
+  - name: Foo
+    age: 18
+  - name: Bar
+    age: 20
 ```
 
 With love, by [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml)
