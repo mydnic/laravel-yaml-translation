@@ -1,4 +1,4 @@
-<?php namespace Devitek\Core\Translation;
+<?php namespace JackJoe\Core\Translation;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader;
@@ -56,7 +56,7 @@ class YamlFileLoader extends FileLoader
 
         return [];
     }
-    
+
     protected function parseYamlOrLoadFromCache($file)
     {
         $cachefile = storage_path() . '/cache/yaml.lang.cache.' . md5($file) . '.php';
@@ -72,5 +72,5 @@ class YamlFileLoader extends FileLoader
 
         return $content;
     }
-    
+
 }

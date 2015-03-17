@@ -1,4 +1,4 @@
-<?php namespace Devitek\Core\Translation;
+<?php namespace JackJoe\Core\Translation;
 
 use \Illuminate\Translation\TranslationServiceProvider as IlluminateTranslationServiceProvider;
 
