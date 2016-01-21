@@ -1,6 +1,8 @@
 {
   "name": "jackjoe/yaml-translation",
   "description": "Add YAML file support to Laravel TranslationServiceProvider, fork of devitek/yaml-translation",
+  "keywords": ["laravel", "translations", "yaml"],
+  "license": "MIT",
   "authors": [
     {
       "name": "Jack + Joe",
