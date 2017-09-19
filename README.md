@@ -68,4 +68,8 @@ team:
 
 When you want to use the `yaml` files, be sure to **delete** the `php` files!
 
-With love, by [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml)
+
+## License
+
+ExActivity is Copyright © 2017 [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml). It is free software, and may be
+redistributed under the terms specified in the [LICENSE](/LICENSE) file.
