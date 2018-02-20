@@ -17,7 +17,7 @@
   "require": {
     "php": ">=5.4.0",
     "illuminate/translation": ">=5.1.0",
-    "symfony/yaml": ">=3.3.9"
+    "symfony/yaml": ">=4.0.4"
   },
   "autoload": {
     "psr-4": {
