@@ -1,6 +1,12 @@
-# Add Yaml file support for Laravel 5 TranslationServiceProvider
+# Yaml Translation
 
-This package uses Symfony/Yaml parser, and is forked from [Devitek/laravel-yaml-translation](https://github.com/Devitek/laravel-yaml-translation)
+[![Latest Version](https://img.shields.io/packagist/v/intervention/image.svg)](https://packagist.org/packages/jackjoe/yaml-translation)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/intervention/image.svg)](https://packagist.org/jackjoe/yaml-translation/image/stats)
+
+## Add Yaml file support for Laravel 5 TranslationServiceProvider
+
+This package uses Symfony/Yaml parser, and is forked from
+[Devitek/laravel-yaml-translation](https://github.com/Devitek/laravel-yaml-translation)
 
 ## Installation
 
@@ -14,7 +20,8 @@ Run `composer install` to get the latest version of the package.
 
 ### Manually
 
-It's recommended that you use Composer, however you can download and install from this repository.
+It's recommended that you use Composer, however you can download and install
+from this repository.
 
 ## Add support in Laravel
 
@@ -30,7 +37,8 @@ in `config/app.php`.
 
 ## How to use
 
-Instead of using the regular **php** files to input your translation, use **yml** or **yaml** files instead.
+Instead of using the regular **php** files to input your translation, use
+**yml** or **yaml** files instead.
 
 **PHP**:
 
@@ -70,4 +78,7 @@ When you want to use the `yaml` files, be sure to **delete** the `php` files!
 
 ## License
 
-Copyright © 2018 [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml). This is free software, and may be redistributed under the terms specified in the [LICENSE](/LICENSE) file.
+Copyright © 2018 [Jack +
+Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml). This is free
+software, and may be redistributed under the terms specified in the
+[LICENSE](/LICENSE) file.

@@ -4,15 +4,12 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader;
 use Symfony\Component\Yaml\Parser;
 
-class YamlFileLoader extends FileLoader
-{
-  protected function getAllowedFileExtensions()
-  {
+class YamlFileLoader extends FileLoader {
+  protected function getAllowedFileExtensions() {
     return ['php', 'yml', 'yaml'];
   }
 
-  protected function loadNamespaceOverrides(array $lines, $locale, $group, $namespace)
-  {
+  protected function loadNamespaceOverrides(array $lines, $locale, $group, $namespace) {
     foreach ($this->getAllowedFileExtensions() as $extension) {
       $file = "{$this->path}/packages/{$locale}/{$namespace}/{$group}." . $extension;
 
@@ -24,13 +21,11 @@ class YamlFileLoader extends FileLoader
     return $lines;
   }
 
-  protected function replaceLines($format, $lines, $file)
-  {
+  protected function replaceLines($format, $lines, $file) {
     return array_replace_recursive($lines, $this->parseContent($format, $file));
   }
 
-  protected function parseContent($format, $file)
-  {
+  protected function parseContent($format, $file) {
     $content = null;
 
     switch ($format) {
@@ -46,8 +41,7 @@ class YamlFileLoader extends FileLoader
     return $content;
   }
 
-  protected function loadPath($path, $locale, $group)
-  {
+  protected function loadPath($path, $locale, $group) {
     foreach ($this->getAllowedFileExtensions() as $extension) {
       if ($this->files->exists($full = "{$path}/{$locale}/{$group}." . $extension)) {
         return $this->parseContent($extension, $full);
@@ -57,20 +51,16 @@ class YamlFileLoader extends FileLoader
     return [];
   }
 
-  protected function parseYamlOrLoadFromCache($file)
-  {
+  protected function parseYamlOrLoadFromCache($file) {
     $cachefile = storage_path() . '/framework/cache/yaml.lang.cache.' . md5($file) . '.php';
 
     if (@filemtime($cachefile) < filemtime($file)) {
       $parser = new Parser();
       $content = $parser->parse(file_get_contents($file));
-
       file_put_contents($cachefile, "<?php" . PHP_EOL . PHP_EOL . "return " . var_export($content, true) . ";");
-    } else {
-      $content = $this->files->getRequire($cachefile);
+      return $content;
     }
 
-    return $content;
+    return $this->files->getRequire($cachefile);
   }
-
 }
