@@ -24,7 +24,6 @@
       "JackJoe\\": "src/JackJoe"
     }
   },
-  "minimum-stability": "dev",
   "extra": {
     "laravel": {
       "providers": ["JackJoe\\Core\\Translation\\TranslationServiceProvider"]
