@@ -2,7 +2,7 @@
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader;
-use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Yaml;
 
 class YamlFileLoader extends FileLoader {
   protected function getAllowedFileExtensions() {
@@ -55,8 +55,7 @@ class YamlFileLoader extends FileLoader {
     $cachefile = storage_path() . '/framework/cache/yaml.lang.cache.' . md5($file) . '.php';
 
     if (@filemtime($cachefile) < filemtime($file)) {
-      $parser = new Parser();
-      $content = $parser->parse(file_get_contents($file));
+      $content = Yaml::parseFile($file);
       file_put_contents($cachefile, "<?php" . PHP_EOL . PHP_EOL . "return " . var_export($content, true) . ";");
       return $content;
     }
