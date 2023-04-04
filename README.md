@@ -1,9 +1,8 @@
 # Yaml Translation
 
-[![Latest Version](https://img.shields.io/packagist/v/jackjoe/yaml-translation.svg)](https://packagist.org/packages/jackjoe/yaml-translation)
-[![Monthly Downloads](https://img.shields.io/packagist/dm/jackjoe/yaml-translation.svg)](https://packagist.org/jackjoe/yaml-translation/image/stats)
+Based and forked from https://github.com/jackjoe/laravel-yaml-translation
 
-## Add Yaml file support for Laravel 5 TranslationServiceProvider
+## Add Yaml file support for Laravel
 
 This package uses Symfony/Yaml parser, and is forked from
 [Devitek/laravel-yaml-translation](https://github.com/Devitek/laravel-yaml-translation)
@@ -12,26 +11,17 @@ This package uses Symfony/Yaml parser, and is forked from
 
 ### Composer
 
-Add Laravel Localization to your `composer.json` file.
+`composer require mydnic/laravel-yaml-translation`
 
-    "jackjoe/yaml-translation": "*"
-
-Run `composer install` to get the latest version of the package.
-
-### Manually
-
-It's recommended that you use Composer, however you can download and install
-from this repository.
-
-## Add support in Laravel
+### Replace Service Provider
 
 You have to replace
 
-`'Illuminate\Translation\TranslationServiceProvider',`
+`Illuminate\Translation\TranslationServiceProvider::class,`
 
 with
 
-`'JackJoe\Core\Translation\TranslationServiceProvider',`
+`Mydnic\Core\Translation\TranslationServiceProvider::class,`
 
 in `config/app.php`.
 
@@ -78,6 +68,4 @@ When you want to use the `yaml` files, be sure to **delete** the `php` files!
 
 ## License
 
-Copyright © 2019 [Jack + Joe](https://jackjoe.be?utm_source=github&utm_campaign=yml). This is free
-software, and may be redistributed under the terms specified in the
-[LICENSE](/LICENSE) file.
+This is free software, and may be redistributed under the terms specified in the [LICENSE](/LICENSE) file.

@@ -1,4 +1,6 @@
-<?php namespace JackJoe\Core\Translation;
+<?php
+
+namespace Mydnic\Core\Translation;
 
 use Illuminate\Support\Arr;
 use Symfony\Component\Yaml\Yaml;

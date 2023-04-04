@@ -1,17 +1,12 @@
 {
-  "name": "jackjoe/yaml-translation",
-  "description":
-    "Add YAML file support to Laravel TranslationServiceProvider, fork of devitek/yaml-translation",
+  "name": "mydnic/laravel-yaml-translation",
+  "description": "Add YAML file support to Laravel TranslationServiceProvider, fork of devitek/laravel-yaml-translation",
   "keywords": ["laravel", "translations", "yaml"],
   "license": "MIT",
   "authors": [
     {
-      "name": "Jack + Joe",
-      "email": "hello@jackjoe.be"
-    },
-    {
-      "name": "Thomas SIEFFERT",
-      "email": "caporaldead@devitek.fr"
+      "name": "Clement Rigo",
+      "email": "rigoclement@mydnic.be"
     }
   ],
   "require": {
@@ -21,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "JackJoe\\": "src/JackJoe"
+      "Mydnic\\": "src"
     }
   },
   "extra": {
     "laravel": {
-      "providers": ["JackJoe\\Core\\Translation\\TranslationServiceProvider"]
+      "providers": ["Mydnic\\Core\\Translation\\TranslationServiceProvider"]
     }
   }
 }
