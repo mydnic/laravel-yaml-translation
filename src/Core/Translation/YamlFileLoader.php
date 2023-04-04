@@ -2,13 +2,13 @@
 
 namespace Mydnic\Core\Translation;
 
-use Illuminate\Support\Arr;
-use Symfony\Component\Yaml\Yaml;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader;
+use Symfony\Component\Yaml\Yaml;
 
-class YamlFileLoader extends FileLoader {
-  /**
+class YamlFileLoader extends FileLoader
+{
+    /**
      * The filesystem instance.
      *
      * @var Filesystem
@@ -32,12 +32,11 @@ class YamlFileLoader extends FileLoader {
     /**
      * Create a new file loader instance.
      *
-     * @param  Filesystem $files
-     * @param  string     $path
+     * @param  string  $path
      */
     public function __construct(Filesystem $files, $path)
     {
-        $this->path  = $path;
+        $this->path = $path;
         $this->files = $files;
     }
 
@@ -54,11 +53,9 @@ class YamlFileLoader extends FileLoader {
     /**
      * Load a local namespaced translation group for overrides.
      *
-     * @param  array  $lines
-     * @param  string $locale
-     * @param  string $group
-     * @param  string $namespace
-     *
+     * @param  string  $locale
+     * @param  string  $group
+     * @param  string  $namespace
      * @return array
      */
     protected function loadNamespaceOverrides(array $lines, $locale, $group, $namespace)
@@ -77,10 +74,9 @@ class YamlFileLoader extends FileLoader {
     /**
      * Load a locale from a given path.
      *
-     * @param  string $path
-     * @param  string $locale
-     * @param  string $group
-     *
+     * @param  string  $path
+     * @param  string  $locale
+     * @param  string  $group
      * @return array
      */
     protected function loadPath($path, $locale, $group)
@@ -97,9 +93,8 @@ class YamlFileLoader extends FileLoader {
     /**
      * Require regular php file or parse Yaml before loading it
      *
-     * @param  string $extension
-     * @param  string $file
-     *
+     * @param  string  $extension
+     * @param  string  $file
      * @return array
      */
     protected function parseContent($extension, $file)
@@ -122,14 +117,13 @@ class YamlFileLoader extends FileLoader {
     /**
      * Parse a Yaml file and return as a php array or load from cache.
      *
-     * @param  string $file
-     *
+     * @param  string  $file
      * @return array
      */
     protected function parseYamlOrLoadFromCache($file)
     {
-        $cachedir  = storage_path() . '/yaml-translation/';
-        $cachefile = $cachedir . 'cache.' . md5($file) . '.php';
+        $cachedir = storage_path().'/yaml-translation/';
+        $cachefile = $cachedir.'cache.'.md5($file).'.php';
 
         if (@filemtime($cachefile) < filemtime($file)) {
             $content = null === ($yaml = Yaml::parse(file_get_contents($file))) ? [] : $yaml;
@@ -138,7 +132,7 @@ class YamlFileLoader extends FileLoader {
                 @mkdir($cachedir, 0755);
             }
 
-            file_put_contents($cachefile, "<?php" . PHP_EOL . PHP_EOL . "return " . var_export($content, true) . ";");
+            file_put_contents($cachefile, '<?php'.PHP_EOL.PHP_EOL.'return '.var_export($content, true).';');
         } else {
             $content = require $cachefile;
         }
@@ -149,10 +143,9 @@ class YamlFileLoader extends FileLoader {
     /**
      * Load the messages for the given locale.
      *
-     * @param  string $locale
-     * @param  string $group
-     * @param  string $namespace
-     *
+     * @param  string  $locale
+     * @param  string  $group
+     * @param  string  $namespace
      * @return array
      */
     public function load($locale, $group, $namespace = null)
@@ -167,10 +160,9 @@ class YamlFileLoader extends FileLoader {
     /**
      * Load a namespaced translation group.
      *
-     * @param  string $locale
-     * @param  string $group
-     * @param  string $namespace
-     *
+     * @param  string  $locale
+     * @param  string  $group
+     * @param  string  $namespace
      * @return array
      */
     protected function loadNamespaced($locale, $group, $namespace)
@@ -187,9 +179,8 @@ class YamlFileLoader extends FileLoader {
     /**
      * Add a new namespace to the loader.
      *
-     * @param  string $namespace
-     * @param  string $hint
-     *
+     * @param  string  $namespace
+     * @param  string  $hint
      * @return void
      */
     public function addNamespace($namespace, $hint)
